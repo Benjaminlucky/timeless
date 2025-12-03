@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "tailwindcss";
+
+/* --- 1. Base Theme Variables for Light/Dark Mode and Fonts --- */
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Custom Font Variables: Poppins is now the default body/sans font */
+  --font-body: "Poppins", sans-serif;
+  --font-heading: "Playfair Display", serif;
+
+  /* Retain Geist variables if needed for compatibility/specific elements */
+  --font-geist-sans: var(--font-body);
+  --font-geist-mono: monospace; /* Placeholder if Geist is removed */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: #ededed;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- 2. Tailwind CSS @theme Block (Tailwind 4) --- */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground); /* Added missing foreground mapping */
+
+  --color-primary-100: #fef4c9;
+  --color-primary-200: #fbe68e;
+  --color-primary-300: #f9d854;
+  --color-primary-400: #f6c500; /* Primary for lighter contrast */
+  --color-primary-500: #e2b300; /* Slightly darker as the main shade */
+  --color-primary-600: #b58f00;
+  --color-primary-700: #886b00;
+  --color-primary-800: #5b4800;
+  --color-primary-900: #2f2500;
+
+  /* Secondary Color: #0A2540 (Deep Blue/Black, used near 900 shade) */
+  --color-secondary-50: #e0e5ed;
+  --color-secondary-100: #bac3cf;
+  --color-secondary-200: #8a98ac;
+  --color-secondary-300: #5b6d88;
+  --color-secondary-400: #2b4265;
+  --color-secondary-500: #0e2f57;
+  --color-secondary-600: #0c2b4e;
+  --color-secondary-700: #0b2847;
+  --color-secondary-800: #0a2540;
+  --color-secondary-900: #081e33;
+}
+
+/* --- 3. Global Styling for Body and Headings --- */
+
+body {
+  /* Use the background variable for global background */
+  background: var(--background);
+  font-family: Poppins, sans-serif;
+
+  margin: 0;
+  padding: 0;
+}
